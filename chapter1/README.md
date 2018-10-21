@@ -66,6 +66,8 @@
 
 ## 编写一个hello-springboot-程序
 
+[源码地址](/chapter1-1)
+
 创建 ``` HelloControllerl ``` 类，内容如下
 
 ```java
