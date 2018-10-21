@@ -76,7 +76,7 @@
 
 ## 编写一个hello-springboot-程序
 
-[源码地址](/chapter1/chapter1-1)
+[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1)
 
 创建 ``` HelloControllerl ``` 类，内容如下
 
@@ -239,4 +239,4 @@ public class HelloController {
 
 ![/img/](./img/20181021_007.png)
 
-[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2](/chapter1/chapter1-2)
+[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2)
