@@ -239,4 +239,4 @@ public class HelloController {
 
 ![/img/](./img/20181021_007.png)
 
-[源码地址](/chapter1/chapter1-2)
+[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2](/chapter1/chapter1-2)
