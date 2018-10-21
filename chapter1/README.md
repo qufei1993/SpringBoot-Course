@@ -4,7 +4,7 @@
 
 * [IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程](/chapter1/README.md#intellig编辑器创建)
 * [编写一个Hello SpringBoot程序](/chapter1/README.md#编写一个hello-springboot-程序)
-     - `[运行程序]` 三种方式启动项目 [`[more]`](/chapter1/README.md#三种启动方式)
+     - `[运行程序]` 三种方式启动项目 [`[more]`](/chapter1/README.md#三种启动方式)
 * [项目属性配置](/chapter1/README.md#项目属性配置)
     - `[项目属性配置]` application.properties文件设置配置 [`[more]`](/chapter1/README.md#后缀properties文件配置)
     - `[项目属性配置]` application.yml文件设置配置 [`[more]`](/chapter1/README.md#后缀yml文件配置)
@@ -285,21 +285,21 @@ spring:
         active: dev
 ```
 
-通过```java -jar```的方式启动
+通过```java -jar```的方式启动
 
 进入项目根目录，执行命令进行编译 ``` mvn install ```
 
-开启了两个终端分别执行命令：
+开启了两个终端分别执行命令：
 
 * 开启dev环境 ``` java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev ```
 
-* 开启pro环境```java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=pro```
+* 开启pro环境```java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=pro```
 
 以下为两个终端的启动信息，可以看到分别开启了8080端口、8081端口
 
 ![](./img/20181021_008.png)
 
-浏览器端同样开启两个窗口分别执行:
+浏览器端同样开启两个窗口分别执行:
 * http://localhost:8080/user/hello
 * http://localhost:8081/user/hello
 
@@ -307,8 +307,8 @@ spring:
 
 ![](./img/20181021_009.png)
 
-通过以上实例，可以总结出以下3点：
-* application.yml 用来存放公共配置，设置spring.profiles.active=dev，默认开发环境配置
+通过以上实例，可以总结出以下3点：
+* application.yml 用来存放公共配置，设置spring.profiles.active=dev，默认开发环境配置
 * ``` application-{profile}.yml ```配置不同环境的内容
 * 通过命令行 ```java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=pro```这种方式激活当前需要运行的环境信息
 
