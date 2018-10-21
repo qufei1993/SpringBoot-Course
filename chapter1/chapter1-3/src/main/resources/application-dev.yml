@@ -1,0 +1,8 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /user
+user:
+    nickName: 张三
+    age: 18
+    info: 我今年${user.age}，目前访问的是dev环境。

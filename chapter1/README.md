@@ -4,6 +4,7 @@
 
 * [IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程](/chapter1/README.md#intellig编辑器创建)
 * [编写一个Hello SpringBoot程序](/chapter1/README.md#编写一个hello-springboot-程序)
+     - `[运行程序]` 三种方式启动项目 [`[more]`](/chapter1/README.md#三种启动方式)
 * [项目属性配置](/chapter1/README.md#项目属性配置)
     - `[项目属性配置]` application.properties文件设置配置 [`[more]`](/chapter1/README.md#后缀properties文件配置)
     - `[项目属性配置]` application.yml文件设置配置 [`[more]`](/chapter1/README.md#后缀yml文件配置)
@@ -76,8 +77,6 @@
 
 ## 编写一个hello-springboot-程序
 
-[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1)
-
 创建 ``` HelloControllerl ``` 类，内容如下
 
 ```java
@@ -96,6 +95,8 @@ public class HelloController {
     }
 }
 ```
+
+#### 三种启动方式
 
 启动有多种方式，让我们分别看下
 * 方法一：启动类上，右键单机运行 ``` Run 'UserApplication' ```
@@ -116,6 +117,8 @@ public class HelloController {
     * 通过java -jar命令启动 ``` java -jar user-0.0.1-SNAPSHOT.jar ```
 
 打开浏览器访问```http://localhost:8080/hello```，可以看到页面输出```Hello SpringBoot!!!```
+
+[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1)
 
 ## 项目属性配置
 
@@ -140,7 +143,7 @@ server.servlet.context-path=/user
 删除```application.properties```文件，新建```application.yml```文件
 
 application.yml
-```.yml
+```yml
 server:
     port: 8081
     servlet:
@@ -165,7 +168,7 @@ server:
 各参数之间也可相互引用，例如下面info通过${}在括号里引用了user.age
 
 application.yml
-```application.yml
+```yml
 server:
     port: 8081
     servlet:
@@ -240,3 +243,73 @@ public class HelloController {
 ![/img/](./img/20181021_007.png)
 
 [源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2)
+
+#### 多环境动态配置
+
+一个项目在开发中，至少会有两个环境：开发环境、生产环境分别来管理数据链接地址，接口请求地址等，那么对于这种多环境配置我们该怎么操作呢？
+
+SpringBoot中多环境配置需要满足 ``` application-{profile}.yml ```格式，例如我们本次实例中即将要介绍的:
+
+* ```application-dev.yml```：开发环境
+
+```yml
+server:
+    port: 8080
+    servlet:
+        context-path: /user
+user:
+    nickName: 张三
+    age: 18
+    info: 我今年${user.age}，目前访问的是dev环境。
+```
+
+* ```application-pro.yml```：生产环境
+
+```yml
+server:
+    port: 8081
+    servlet:
+        context-path: /user
+user:
+    nickName: 李四
+    age: 19
+    info: 我今年${user.age}，目前访问的是pro环境。
+```
+
+至于哪个文件会被加载，需要对```spring.profiles.active```属性进行设置。
+修改```application.yml```文件，会默认加载```application-dev.yml```配置文件
+
+```yml
+spring:
+    profiles:
+        active: dev
+```
+
+通过```java -jar```的方式启动
+
+进入项目根目录，执行命令进行编译 ``` mvn install ```
+
+开启了两个终端分别执行命令：
+
+* 开启dev环境 ``` java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev ```
+
+* 开启pro环境```java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=pro```
+
+以下为两个终端的启动信息，可以看到分别开启了8080端口、8081端口
+
+![](./img/20181021_008.png)
+
+浏览器端同样开启两个窗口分别执行:
+* http://localhost:8080/user/hello
+* http://localhost:8081/user/hello
+
+分别返回不同环境对应的配置信息，
+
+![](./img/20181021_009.png)
+
+通过以上实例，可以总结出以下3点：
+* application.yml 用来存放公共配置，设置spring.profiles.active=dev，默认开发环境配置
+* ``` application-{profile}.yml ```配置不同环境的内容
+* 通过命令行 ```java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=pro```这种方式激活当前需要运行的环境信息
+
+[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-3](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-3)

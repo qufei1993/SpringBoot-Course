@@ -11,6 +11,7 @@
 
 * [IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程](/chapter1/README.md#intellig编辑器创建)
 * [编写一个Hello SpringBoot程序](/chapter1/README.md#编写一个hello-springboot-程序)
+     - `[运行程序]` 三种方式启动项目 [`[more]`](/chapter1/README.md#三种启动方式)
 * [项目属性配置](/chapter1/README.md#项目属性配置)
     - `[项目属性配置]` application.properties文件设置配置 [`[more]`](/chapter1/README.md#后缀properties文件配置)
     - `[项目属性配置]` application.yml文件设置配置 [`[more]`](/chapter1/README.md#后缀yml文件配置)
