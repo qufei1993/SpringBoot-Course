@@ -4,7 +4,11 @@
 
 * [IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程](/chapter1/README.md#intellig编辑器创建)
 * [编写一个Hello SpringBoot程序](/chapter1/README.md#编写一个hello-springboot-程序)
-* [项目属性配置（application.properties文件设置配置、application.yml文件设置配置、自定义属性配置参数间引用、多环境动态配置）](/chapter1/README.md#项目属性配置)
+* [项目属性配置](/chapter1/README.md#项目属性配置)
+    - `[项目属性配置]` application.properties文件设置配置 [`[more]`](/chapter1/README.md#后缀properties文件配置)
+    - `[项目属性配置]` application.yml文件设置配置 [`[more]`](/chapter1/README.md#后缀yml文件配置)
+    - `[项目属性配置]` 自定义属性配置参数间引用 [`[more]`](/chapter1/README.md#自定义属性配置及参数间引用)
+    - `[项目属性配置]` 多环境动态配置 [`[more]`](/chapter1/README.md#多环境动态配置)
 
 ## IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程
 ## intellig编辑器创建
@@ -115,7 +119,7 @@ public class HelloController {
 
 ## 项目属性配置
 
-#### 后缀properties文件配置
+#### 后缀properties文件配置
 
 SpringBoot默认使用 ```application.properties```文件，位于```/src/main/resources```目录下，项目的默认启动端口是8080，下面对此进行修改
 
@@ -129,7 +133,7 @@ server.port=8081
 server.servlet.context-path=/user
 ```
 
-#### 后缀yml文件配置
+#### 后缀yml文件配置
 
 还可以使用```.yml```文件写，优点在于更简洁，推荐此格式
 
@@ -156,7 +160,7 @@ server:
 
 #### 自定义属性配置及参数间引用
 
-项目开发中通常还会需要自定义一些配置文件，格式和上面一样，让我们来设置一些访问该网站的用户信息
+项目开发中通常还会需要自定义一些配置文件，格式和上面一样，让我们来设置一些访问该网站的用户信息
 
 各参数之间也可相互引用，例如下面info通过${}在括号里引用了user.age
 
