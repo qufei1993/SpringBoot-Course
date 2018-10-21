@@ -162,7 +162,7 @@ server:
 
 项目开发中通常还会需要自定义一些配置文件，格式和上面一样，让我们来设置一些访问该网站的用户信息
 
-各参数之间也可相互引用，例如下面info通过${}在括号里引用了user.age
+各参数之间也可相互引用，例如下面info通过${}在括号里引用了user.age
 
 application.yml
 ```application.yml
@@ -239,3 +239,4 @@ public class HelloController {
 
 ![/img/](./img/20181021_007.png)
 
+[源码地址](/chapter1/chapter1-2)
