@@ -1,5 +1,11 @@
 # 项目构建
 
+## 快速导航
+
+* [IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程](/chapter1/README.md#intellig编辑器创建)
+* [编写一个Hello SpringBoot程序](/chapter1/README.md#编写一个hello-springboot-程序)
+* [项目属性配置（application.properties文件设置配置、application.yml文件设置配置、自定义属性配置参数间引用、多环境动态配置）](/chapter1/README.md#项目属性配置)
+
 ## IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程
 ## intellig编辑器创建
 
@@ -106,3 +112,126 @@ public class HelloController {
     * 通过java -jar命令启动 ``` java -jar user-0.0.1-SNAPSHOT.jar ```
 
 打开浏览器访问```http://localhost:8080/hello```，可以看到页面输出```Hello SpringBoot!!!```
+
+## 项目属性配置
+
+#### 后缀properties文件配置
+
+SpringBoot默认使用 ```application.properties```文件，位于```/src/main/resources```目录下，项目的默认启动端口是8080，下面对此进行修改
+
+* server.port：修改端口号
+* server.context-path：设置url前缀 SpringBoot2.0版本以下采用此方法
+* server.servlet.context-path：设置url前缀SpringBoot2.0版本以上使用
+
+application.properties
+```s
+server.port=8081
+server.servlet.context-path=/user
+```
+
+#### 后缀yml文件配置
+
+还可以使用```.yml```文件写，优点在于更简洁，推荐此格式
+
+删除```application.properties```文件，新建```application.yml```文件
+
+application.yml
+```.yml
+server:
+    port: 8081
+    servlet:
+        context-path: /user
+```
+
+通过以上配置在重启我们的项目，可以看到以下提示，```Tomcat started on port(s): 8081 (http) with context path '/user'```
+
+```s
+2018-10-21 16:31:51.003  INFO 14696 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/user'
+2018-10-21 16:31:51.008  INFO 14696 --- [           main] com.angelo.UserApplication               : Started UserApplication in 2.999 seconds (JVM running for 4.054)
+```
+
+在浏览器运行这次需要加上我们的前缀进行访问 ```http://localhost:8081/user/hello```
+
+![/img/](./img/20181021_006.png)
+
+#### 自定义属性配置及参数间引用
+
+项目开发中通常还会需要自定义一些配置文件，格式和上面一样，让我们来设置一些访问该网站的用户信息
+
+各参数之间也可相互引用，例如下面info通过${}在括号里引用了user.age
+
+application.yml
+```application.yml
+server:
+    port: 8081
+    servlet:
+        context-path: /user
+user:
+    nickName: 张三
+    age: 18
+    info: 我今年${user.age}。
+```
+
+```/src/main/resources```目录下新建```UserProperties.java```文件
+
+UserProperties.java
+```java
+package com.angelo;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix = "user") // 获取前缀是user的配置
+public class UserProperties {
+    private String nickName;
+
+    private String info;
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+}
+```
+
+修改```HelloController.java```
+
+```java
+package com.angelo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@RestController
+public class HelloController {
+
+    @Autowired
+    private UserProperties userProperties;
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String say() {
+
+        return "我是 " + userProperties.getNickName() + userProperties.getInfo();
+    }
+}
+
+```
+
+启动，浏览器运行```http://localhost:8081/user/hello```
+
+![/img/](./img/20181021_007.png)
+
