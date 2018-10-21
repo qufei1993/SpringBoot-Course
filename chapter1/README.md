@@ -14,7 +14,7 @@
 ## IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程
 ## intellig编辑器创建
 
-* 菜单栏中选择 ```File``` => ```File``` => ```Project```，可以看到下图弹出创建窗口，左侧默认指向Spring Initializr，右侧Choose Initializr Service Url 默认指向 https://start.spring.io/ ，这是Spring官方提供的，在这里也可以创建工程项目。
+* 菜单栏中选择 ```File``` => ```New``` => ```Project```，可以看到下图弹出创建窗口，左侧默认指向Spring Initializr，右侧Choose Initializr Service Url 默认指向 https://start.spring.io/ ，这是Spring官方提供的，在这里也可以创建工程项目。
 
 ![](./img/20181021_001.png)
 
