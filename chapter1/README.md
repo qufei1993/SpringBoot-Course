@@ -2,19 +2,19 @@
 
 ## IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程
 
-* 菜单栏中选择 ```File``` => ```File``` => ```Project```，可以看到下图弹出创建窗口，左侧默认指向Spring Initializr，右侧Choose Initializr Service Url 默认指向 https://start.spring.io/ ，这是Spring官方提供的，在这里也可以创建工程项目。
+* 菜单栏中选择 ```File``` => ```File``` => ```Project```，可以看到下图弹出创建窗口，左侧默认指向Spring Initializr，右侧Choose Initializr Service Url 默认指向 https://start.spring.io/ ，这是Spring官方提供的，在这里也可以创建工程项目。
 
 ![](./img/20181021_001.png)
 
-* 点击```Next```进入下一步，Group: 自己可以根据自己的喜爱命名，自己的名字等都可以；Name：我们这里设置为User；Type：选择Maven；更多参数设置参考以下图片示例
+* 点击```Next```进入下一步，Group: 自己可以根据自己的喜爱命名，自己的名字等都可以；Name：我们这里设置为User；Type：选择Maven；更多参数设置参考以下图片示例
 
 ![](./img/20181021_002.png)
 
-* 点击```Next```进入下一步，可以看到很多Spring的组件供我们选择，这里只选择Web。
+* 点击```Next```进入下一步，可以看到很多Spring的组件供我们选择，这里只选择Web。
 
 ![](./img/20181021_003.png)
 
-* 点击```Next```进入下步，选择项目的存储位置，点击finish完成整个工程的构建
+* 点击```Next```进入下步，选择项目的存储位置，点击finish完成整个工程的构建
 
 ![](./img/20181021_004.png)
 
@@ -65,7 +65,7 @@
 
 #### 编写一个Hello SpringBoot 程序
 
-创建 ``` HelloControllerl ``` 类，内容如下
+创建 ``` HelloControllerl ``` 类，内容如下
 
 ```java
 package com.angelo;
@@ -85,13 +85,13 @@ public class HelloController {
 ```
 
 启动有多种方式，让我们分别看下
-* 方法一：启动类上，右键单机运行 ``` Run 'UserApplication' ```
+* 方法一：启动类上，右键单机运行 ``` Run 'UserApplication' ```
 
 ![](./img/20181021_005.png)
 
 * 方法二：进到项目根目录执行命令 ``` mvn spring-boot:run ```
-* 方法三：
-    * 先执行命令进行编译 ``` mvn install ```
+* 方法三：
+    * 先执行命令进行编译 ``` mvn install ```
     * 进到target目录可以看到有个 ``` user-0.0.1-SNAPSHOT.jar ```文件
     ```s
     $ cd target   
