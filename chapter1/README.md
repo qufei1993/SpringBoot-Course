@@ -64,7 +64,7 @@
 ...
 ```
 
-## 编写一个Hello SpringBoot程序
+## 编写一个hello-springboot-程序
 
 创建 ``` HelloControllerl ``` 类，内容如下
 
