@@ -1,12 +1,13 @@
 # 项目构建
 
 ## IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程
+## intellig编辑器创建
 
 * 菜单栏中选择 ```File``` => ```File``` => ```Project```，可以看到下图弹出创建窗口，左侧默认指向Spring Initializr，右侧Choose Initializr Service Url 默认指向 https://start.spring.io/ ，这是Spring官方提供的，在这里也可以创建工程项目。
 
 ![](./img/20181021_001.png)
 
-* 点击```Next```进入下一步，Group: 自己可以根据自己的喜爱命名，自己的名字等都可以；Name：我们这里设置为User；Type：选择Maven；更多参数设置参考以下图片示例
+* 点击```Next```进入下一步，Group: 自己可以根据自己的喜爱命名，自己的名字等都可以；Name：我们这里设置为user；Type：选择Maven；更多参数设置参考以下图片示例
 
 ![](./img/20181021_002.png)
 
@@ -14,7 +15,7 @@
 
 ![](./img/20181021_003.png)
 
-* 点击```Next```进入下步，选择项目的存储位置，点击finish完成整个工程的构建
+* 点击```Next```进入下步，选择项目的存储位置，点击Finish完成整个工程的构建
 
 ![](./img/20181021_004.png)
 
@@ -63,7 +64,7 @@
 ...
 ```
 
-#### 编写一个Hello SpringBoot 程序
+## 编写一个Hello SpringBoot程序
 
 创建 ``` HelloControllerl ``` 类，内容如下
 

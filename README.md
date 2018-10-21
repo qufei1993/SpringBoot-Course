@@ -4,5 +4,7 @@
 
 ## 项目构建
 
-[IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程]()
-[项目属性配置]()
+* [IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程](/chapter1/README.md#intellig编辑器创建)
+* [编写一个Hello SpringBoot程序](/chapter1/README.md#编写一个hello-springboot-程序)
+
+* [项目属性配置]()
