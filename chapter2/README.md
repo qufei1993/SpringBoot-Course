@@ -1,43 +1,31 @@
-# 项目构建
+# 数据存储
 
 ## 快速导航
 
-* [IntelliJ IDEA 中的Spring Initializr快速构建SpringBoot工程](/chapter1/README.md#intellig编辑器创建)
-* [编写一个Hello SpringBoot程序](/chapter1/README.md#编写一个hello-springboot-程序)
-     - `[运行程序]` 三种方式启动项目 [`[more]`](/chapter1/README.md#三种启动方式)
-* [项目属性配置](/chapter1/README.md#项目属性配置)
-    - `[项目属性配置]` application.properties文件设置配置 [`[more]`](/chapter1/README.md#后缀properties文件配置)
-    - `[项目属性配置]` application.yml文件设置配置 [`[more]`](/chapter1/README.md#后缀yml文件配置)
-    - `[项目属性配置]` 自定义属性配置参数间引用 [`[more]`](/chapter1/README.md#自定义属性配置及参数间引用)
-    - `[项目属性配置]` 多环境动态配置 [`[more]`](/chapter1/README.md#多环境动态配置)
-
-
-## 数据存储
-
 - ### 概览[#](#概览)
 - ### MySql
-    * [Spring-Data-Jpa简介及常用CRUD方法](#常用方法)
-    * [pom.xml增加依赖](#添加依赖)
-    * [修改配置文件 数据库Mysql、Jpa相关配置](#mysql相关配置)
-    * [Spring-Data-Jpa实现CRUD操作实例](#实例)
-    * [问题排错](#问题排错)
+    * [Spring-Data-Jpa简介及常用CRUD方法](/chapter2/README.md#常用方法)
+    * [pom.xml增加依赖](/chapter2/README.md#添加依赖)
+    * [修改配置文件 数据库Mysql、Jpa相关配置](/chapter2/README.md#mysql相关配置)
+    * [Spring-Data-Jpa实现CRUD操作实例](/chapter2/README.md#实例)
+    * [问题排错](/chapter2/README.md#问题排错)
 - ### MongoDB
 
 - ### Redis
 
 ## 概览
 
-在介绍以下几种数据库之前少不了先说下```Spring```家族的```spring-data```，适用于关系型和非关系型数据库，简化了配置和数据库访问。例如，```Spring Data JPA```、```Spring Data MongoDB```、```Spring Data Redis```等
+在介绍以下几种数据库之前少不了先说下```Spring```家族的```spring-data```，适用于关系型和非关系型数据库，简化了配置和数据库访问。例如，```Spring Data JPA```、```Spring Data MongoDB```、```Spring Data Redis```等
 
 [Spring Data 官网](https://spring.io/projects/spring-data)，推荐去官网看看。
 
 ## mysql
 
-> Mysql数据库这里要用到Spring-Data-Jpa，它是JPA规范下提供的Repository层的实现，可以使用Hibernate、OpenJpa等框架进行开发。关于JPA规范，它的全称```Java Persistence API```(Java持久化API)一个ORM规范，具体实现还是Hibernate等，JPA为我们提供了CRUD的接口。
+> Mysql数据库这里要用到Spring-Data-Jpa，它是JPA规范下提供的Repository层的实现，可以使用Hibernate、OpenJpa等框架进行开发。关于JPA规范，它的全称```Java Persistence API```(Java持久化API)一个ORM规范，具体实现还是Hibernate等，JPA为我们提供了CRUD的接口。
 
 #### 常用方法
 
-``` 更多详细方法及使用参考官方文档 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/```
+``` 更多详细方法及使用参考官方文档 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/```
 
 * save(): 保存、更新
 * delete: 删除，或者```deleteByProperty``` Property为字段属性名
@@ -85,13 +73,13 @@ spring:
 
 * ##### jpa相关配置
 
-* ```hibernate```: 相关配置信息有以下几种类型
-    * ```ddl-auto:create```: 每次运行加载不管之前是否有数据都会自动创建一个表，会造成数据丢失。
-    * ```ddl-auto:update```: 第一次加载会创建新的数据接口，之后只会在原有表基础之上进行迭代。
-    * ```ddl-auto:validate```: 验证类里面的属性与表结构是否一致。
-    * ```ddl-auto:create-drop```: 每次退出时删除。
-    * ```ddl-auto:node```: 默认什么都不做。
-* ```show-sql```: 是否打印SQL，在开发时可以开启方便调试。
+* ```hibernate```: 相关配置信息有以下几种类型
+    * ```ddl-auto:create```: 每次运行加载不管之前是否有数据都会自动创建一个表，会造成数据丢失。
+    * ```ddl-auto:update```: 第一次加载会创建新的数据接口，之后只会在原有表基础之上进行迭代。
+    * ```ddl-auto:validate```: 验证类里面的属性与表结构是否一致。
+    * ```ddl-auto:create-drop```: 每次退出时删除。
+    * ```ddl-auto:node```: 默认什么都不做。
+* ```show-sql```: 是否打印SQL，在开发时可以开启方便调试。
 * ```database```: 数据库类型。
 
 ```yml
@@ -104,29 +92,29 @@ spring:
 
 ```
 
-#### 实例
+#### 实例
 #### Spring-Data-Jpa实现CRUD操作
 
 实现以下需求：
 
-* ```GET```: 查询所有用户信息
-* ```GET```: 根据年龄获取用户信息
+* ```GET```: 查询所有用户信息
+* ```GET```: 根据年龄获取用户信息
 * ```POST```: 增加用户(姓名、年龄)
 * ```PUT```: 修改用户
 * ```DELETE```: 删除用户
 
 ##### 创建表
 
-就是创建存储的User实体（User类）
+就是创建存储的User实体（User类）
 
-> 是不需要手动去数据库创建表的，以下创建的User类和定义的属性会对应到数据库中的表和字段，这就需要应用jpa的特性了，看下以下注解。
+> 是不需要手动去数据库创建表的，以下创建的User类和定义的属性会对应到数据库中的表和字段，这就需要应用jpa的特性了，看下以下注解。
 
 * ```@Entity```: 代表此类映射为数据库的表结构
 * ```@Id```: 指定一个主键
-* ```@GeneratedValue```: 配置主键相关信息
+* ```@GeneratedValue```: 配置主键相关信息
     * ```Table```: 使用一个特定的数据库表来保存主键
     * ```IDENTITY```: 数据库自动生成
-    * ```AUTO```: 主键由程序控制，默认值
+    * ```AUTO```: 主键由程序控制，默认值
     * ```SEQUENCE```: 通过数据库的序列产生主键, ```MYSQL```不支持，部分数据库```(Oracle,PostgreSQL,DB2)```支持序列对象
 
 ```User.java```
@@ -175,7 +163,7 @@ public class User {
 
 ##### 创建数据访问接口
 
-创建接口User的数据访问UserRepository继承于JpaRepository，可以在这个接口里实现UserRepository的扩展
+创建接口User的数据访问UserRepository继承于JpaRepository，可以在这个接口里实现UserRepository的扩展
 
 ``` UserRepository.java ```
 
@@ -300,7 +288,7 @@ curl -X GET \
 
 * 根据id查找一个用户
 
-注意， spring-data-jpa 2.0.5.RELEASE 版本之后获取单个对象的数据源需要用```findById()```，SpringBoot1.x版本可以使用```findOne()```
+注意， spring-data-jpa 2.0.5.RELEASE 版本之后获取单个对象的数据源需要用```findById()```，SpringBoot1.x版本可以使用```findOne()```
 
 ```java
 @RestController

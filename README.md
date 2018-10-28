@@ -20,8 +20,15 @@
 
 ## 数据存储
 
-- ### MySql
+## 快速导航
 
+- ### 概览[#](#概览)
+- ### MySql
+    * [Spring-Data-Jpa简介及常用CRUD方法](/chapter2/README.md#常用方法)
+    * [pom.xml增加依赖](/chapter2/README.md#添加依赖)
+    * [修改配置文件 数据库Mysql、Jpa相关配置](/chapter2/README.md#mysql相关配置)
+    * [Spring-Data-Jpa实现CRUD操作实例](/chapter2/README.md#实例)
+    * [问题排错](/chapter2/README.md#问题排错)
 - ### MongoDB
 
 - ### Redis
