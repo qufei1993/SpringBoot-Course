@@ -509,4 +509,4 @@ spring:
         password: 123456
 ```
 
-[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter2/chapter2-1](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter2/chapter2-1)
+[源码地址 https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-1)

@@ -118,7 +118,7 @@ public class HelloController {
 
 打开浏览器访问```http://localhost:8080/hello```，可以看到页面输出```Hello SpringBoot!!!```
 
-[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-1)
+[源码地址 https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter1/chapter1-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter1/chapter1-1)
 
 ## 项目属性配置
 
@@ -242,7 +242,7 @@ public class HelloController {
 
 ![/img/](./img/20181021_007.png)
 
-[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-2)
+[源码地址 https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter1/chapter1-2](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter1/chapter1-2)
 
 #### 多环境动态配置
 
@@ -312,4 +312,4 @@ spring:
 * ``` application-{profile}.yml ```配置不同环境的内容
 * 通过命令行 ```java -jar target/user-0.0.1-SNAPSHOT.jar --spring.profiles.active=pro```这种方式激活当前需要运行的环境信息
 
-[源码地址 https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-3](https://github.com/Q-Angelo/SpringBoot-WebApi/tree/master/chapter1/chapter1-3)
+[源码地址 https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter1/chapter1-3](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter1/chapter1-3)
