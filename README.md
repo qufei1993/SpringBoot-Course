@@ -20,8 +20,6 @@
 
 ## 数据存储
 
-## 快速导航
-
 - ### 概览[#](#概览)
 - ### MySql
     * [Spring-Data-Jpa简介及常用CRUD方法](/chapter2/README.md#常用方法)
