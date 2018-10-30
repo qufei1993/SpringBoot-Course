@@ -2,7 +2,8 @@
 
 ## 快速导航
 
-- ### 概览[#](#概览)
+- ### 概览
+> 在介绍以下几种数据库之前少不了先说下```Spring```家族的```spring-data```，适用于关系型和非关系型数据库，简化了配置和数据库访问。例如，```Spring Data JPA```、```Spring Data MongoDB```、```Spring Data Redis```等
 - ### MySql
     * [Spring-Data-Jpa简介及常用CRUD方法](/chapter2/README.md#常用方法)
     * [pom.xml增加依赖](/chapter2/README.md#添加依赖)
@@ -10,7 +11,12 @@
     * [Spring-Data-Jpa实现CRUD操作实例](/chapter2/README.md#实例)
     * [问题排错](/chapter2/README.md#问题排错)
 - ### MongoDB
-
+    * [MongoDB、Spring Data MongoDB简介](#简介)
+    * [pom.xml增加spring-boot-starter-data-mongodb依赖](#添加依赖)
+    * [修改配置文件数据MongoDB相关配置](#修改配置文件)
+    * [定义集合模型](#定义集合模型)
+    * [创建数据访问对象](#创建数据访问对象)
+    * [创建实例实现对数据的增删改查操作](#创建控制层实现对数据的增删改查)
 - ### Redis
 
 ## 概览
@@ -134,29 +140,7 @@ public class User {
     public User() {
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+    // getter、setter方法此处省略，代码可参考本节源码
 }
 
 ```
@@ -510,3 +494,182 @@ spring:
 ```
 
 [源码地址 https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-1)
+
+## mongodb
+
+#### 简介
+
+MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案，官方解释。在NoSql数据库中还是比较优秀的一款数据库，且官方网站现在已经逐步开始支持中文版了。 [MongoDB 中文版](https://www.mongodb.com/zh)
+
+之前MySql介绍了Spring Data Jpa，对于MongoDB，Spring也提供了强大的支持，这里介绍下[Spring Data MongoDB](https://spring.io/projects/spring-data-mongodb)，这个项目提供了与MongoDB文档数据库的集成。
+
+```注意``` 在开始之前先开启你的```mongod```，对于mongodb安装启动有疑问的可以参考这里 [Mac系统下安装MongoDB](https://github.com/Q-Angelo/summarize/blob/master/database/mongo_install.md)
+
+#### 添加依赖
+
+项目根目录 ```pom.xml``` 添加依赖 ```spring-boot-starter-data-mongodb```
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+</dependency>
+```
+
+#### 修改配置文件
+
+* mongo2.4以上版本：
+    * ```uri```: 数据库链接地址  mongodb://username:password@ip:host
+
+* mongo2.4以下版本：
+    * ```host```: 127.0.0.1
+    * ```port```: 27017
+    * ```username```: root
+    * ```password```: root
+    * ```database```: test
+
+
+``` application.yml ```
+
+```yml
+spring:
+    data:
+        mongodb:
+            uri: mongodb://127.0.0.1:27017
+            database: test
+```
+
+#### 定义集合模型
+
+[关于Spring Data MongoDB更多注解及使用参考官方文档](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)
+
+在项目启动时候，以下定义的字段会对应到数据库中的数据结构，注意要添加```@Document```注解。
+
+* ```@Document```: 标注于实体类上表明由mongo来维护该集合，默认集合名为类名还可手动指定集合名```@Document(collection=user)```
+* ```@Id```: 主键，自带索引由mongo生成对应mongo中的```_id```字段(ObjectId)
+* ```@Indexed```: 设置该字段索引，提高查询效率，设置参数```(unique=true)```为唯一索引，默认为false
+
+``` java
+package com.angelo;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+public class User {
+
+    @Id
+    private String id;
+
+    @Indexed
+    private String name;
+
+    private Integer age;
+
+    @Indexed(unique = true)
+    private String idCard;
+
+    public User() {
+    }
+
+    // 以下getter、setter方法，代码可以参考本节源码
+}
+```
+
+#### 创建数据访问对象
+
+创建UserRepository继承于MongoRepository，当然你也可以使用JpaRepository或MongoRepository，这些接口扩展mongodb的CRUD操作的通用接口，此外还公开了底层持久化技术的功能，供我们扩展。
+
+例如以下```findById```，MongoRepository提供的接口为Long类型，显然我这里使用mongodb自动生成的ObjectId，自然是不行了，因此扩展了该方法。
+
+``` UserRepository.java ```
+
+```java
+package com.angelo;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import java.util.List;
+
+public interface UserRepository extends MongoRepository<User, Long> {
+    User findById(String id);
+
+    List <User> deleteById(String id);
+}
+
+```
+
+#### 创建控制层实现对数据的增删改查
+
+此处操作Mongodb的增删改查和之前讨论的MySql一样，以下给出代码示例
+
+```java
+package com.angelo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+public class UserController {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    /**
+     * 查询用户列表
+     * @return
+     */
+    @GetMapping(value = "/user/list")
+    public List<User> userList() {
+        return userRepository.findAll();
+    }
+
+    @GetMapping(value = "/user/info")
+    public User findUserById(@RequestParam("id") String id) {
+        return userRepository.findById(id);
+    }
+
+    /**
+     * 创建用户信息
+     */
+    @PostMapping(value = "/user")
+    public User createUser(@RequestBody User params) {
+        User user = new User();
+        user.setName(params.getName());
+        user.setAge(params.getAge());
+        user.setIdCard(params.getIdCard());
+
+        return userRepository.save(user);
+    }
+
+
+    /**
+     * 更新用户信息
+     */
+    @PutMapping(value = "/user/{id}")
+    public User updateUser(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("age") Integer age,
+        @RequestParam("idCard") String idCard) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        user.setAge(age);
+        user.setIdCard(idCard);
+
+        return userRepository.save(user);
+    }
+
+    /**
+     * 删除用户信息
+     * MongoRepository提供的原生方法会报deleteById(java.lang.long) in CurdRepository cannot be applied to (java.lang.string)，此处定义的id为String类型显然不符，在UserRepository接口中进行了重写，
+     */
+    @DeleteMapping(value = "/user/{id}")
+    public void deleteUserById(@PathVariable("id") String id) {
+        userRepository.deleteById(id);
+    }
+}
+```
+
+[源码地址 https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-2](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-2)
