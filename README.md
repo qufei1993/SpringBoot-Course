@@ -29,12 +29,12 @@
     * [Spring-Data-Jpa实现CRUD操作实例](/chapter2/README.md#实例)
     * [问题排错](/chapter2/README.md#问题排错)
 - ### MongoDB
-    * [MongoDB、Spring Data MongoDB简介](#简介)
-    * [pom.xml增加spring-boot-starter-data-mongodb依赖](#添加依赖)
-    * [修改配置文件数据MongoDB相关配置](#修改配置文件)
-    * [定义集合模型](#定义集合模型)
-    * [创建数据访问对象](#创建数据访问对象)
-    * [创建实例实现对数据的增删改查操作](#创建控制层实现对数据的增删改查)
+    * [MongoDB、Spring Data MongoDB简介](/chapter2/README.md#简介)
+    * [pom.xml增加spring-boot-starter-data-mongodb依赖](/chapter2/README.md#添加依赖)
+    * [修改配置文件数据MongoDB相关配置](/chapter2/README.md#修改配置文件)
+    * [定义集合模型](/chapter2/README.md#定义集合模型)
+    * [创建数据访问对象](/chapter2/README.md#创建数据访问对象)
+    * [创建实例实现对数据的增删改查操作](/chapter2/README.md#创建控制层实现对数据的增删改查)
 - ### Redis
 
 #### 未完待续，持续更新中。。。

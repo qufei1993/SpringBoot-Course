@@ -11,12 +11,12 @@
     * [Spring-Data-Jpa实现CRUD操作实例](/chapter2/README.md#实例)
     * [问题排错](/chapter2/README.md#问题排错)
 - ### MongoDB
-    * [MongoDB、Spring Data MongoDB简介](#简介)
-    * [pom.xml增加spring-boot-starter-data-mongodb依赖](#添加依赖)
-    * [修改配置文件数据MongoDB相关配置](#修改配置文件)
-    * [定义集合模型](#定义集合模型)
-    * [创建数据访问对象](#创建数据访问对象)
-    * [创建实例实现对数据的增删改查操作](#创建控制层实现对数据的增删改查)
+    * [MongoDB、Spring Data MongoDB简介](/chapter2/README.md#简介)
+    * [pom.xml增加spring-boot-starter-data-mongodb依赖](/chapter2/README.md#添加依赖)
+    * [修改配置文件数据MongoDB相关配置](/chapter2/README.md#修改配置文件)
+    * [定义集合模型](/chapter2/README.md#定义集合模型)
+    * [创建数据访问对象](/chapter2/README.md#创建数据访问对象)
+    * [创建实例实现对数据的增删改查操作](/chapter2/README.md#创建控制层实现对数据的增删改查)
 - ### Redis
 
 ## 概览
@@ -501,7 +501,7 @@ spring:
 
 MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案，官方解释。在NoSql数据库中还是比较优秀的一款数据库，且官方网站现在已经逐步开始支持中文版了。 [MongoDB 中文版](https://www.mongodb.com/zh)
 
-之前MySql介绍了Spring Data Jpa，对于MongoDB，Spring也提供了强大的支持，这里介绍下[Spring Data MongoDB](https://spring.io/projects/spring-data-mongodb)，这个项目提供了与MongoDB文档数据库的集成。
+之前MySql介绍了Spring Data Jpa，对于MongoDB，Spring也提供了强大的支持，这里介绍下[Spring Data MongoDB](https://spring.io/projects/spring-data-mongodb)，这个项目提供了与MongoDB文档数据库的集成。
 
 ```注意``` 在开始之前先开启你的```mongod```，对于mongodb安装启动有疑问的可以参考这里 [Mac系统下安装MongoDB](https://github.com/Q-Angelo/summarize/blob/master/database/mongo_install.md)
 
