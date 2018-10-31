@@ -30,10 +30,10 @@
     * [问题排错](/chapter2/README.md#问题排错)
 - ### MongoDB
     * [MongoDB、Spring Data MongoDB简介](/chapter2/README.md#简介)
-    * [pom.xml增加spring-boot-starter-data-mongodb依赖](/chapter2/README.md#添加依赖)
-    * [修改配置文件数据MongoDB相关配置](/chapter2/README.md#修改配置文件)
+    * [pom.xml增加spring-boot-starter-data-mongodb依赖](/chapter2/README.md#添加mongodb依赖)
+    * [修改配置文件 数据库MongoDB相关配置](/chapter2/README.md#修改配置文件mongodb相关配置)
     * [定义集合模型](/chapter2/README.md#定义集合模型)
-    * [创建数据访问对象](/chapter2/README.md#创建数据访问对象)
+    * [创建数据访问对象](/chapter2/README.md#创建继承于mongorepository的数据访问对象)
     * [创建实例实现对数据的增删改查操作](/chapter2/README.md#创建控制层实现对数据的增删改查)
 - ### Redis
 
