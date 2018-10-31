@@ -12,10 +12,10 @@
     * [问题排错](/chapter2/README.md#问题排错)
 - ### MongoDB
     * [MongoDB、Spring Data MongoDB简介](/chapter2/README.md#简介)
-    * [pom.xml增加spring-boot-starter-data-mongodb依赖](/chapter2/README.md#添加依赖)
-    * [修改配置文件数据MongoDB相关配置](/chapter2/README.md#修改配置文件)
+    * [pom.xml增加spring-boot-starter-data-mongodb依赖](/chapter2/README.md#添加mongodb依赖)
+    * [修改配置文件 数据库MongoDB相关配置](/chapter2/README.md#修改配置文件mongodb相关配置)
     * [定义集合模型](/chapter2/README.md#定义集合模型)
-    * [创建数据访问对象](/chapter2/README.md#创建数据访问对象)
+    * [创建数据访问对象](/chapter2/README.md#创建继承于mongorepository的数据访问对象)
     * [创建实例实现对数据的增删改查操作](/chapter2/README.md#创建控制层实现对数据的增删改查)
 - ### Redis
 
@@ -505,7 +505,7 @@ MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写�
 
 ```注意``` 在开始之前先开启你的```mongod```，对于mongodb安装启动有疑问的可以参考这里 [Mac系统下安装MongoDB](https://github.com/Q-Angelo/summarize/blob/master/database/mongo_install.md)
 
-#### 添加依赖
+#### 添加mongodb依赖
 
 项目根目录 ```pom.xml``` 添加依赖 ```spring-boot-starter-data-mongodb```
 
@@ -516,7 +516,7 @@ MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写�
 </dependency>
 ```
 
-#### 修改配置文件
+#### 修改配置文件mongodb相关配置
 
 * mongo2.4以上版本：
     * ```uri```: 数据库链接地址  mongodb://username:password@ip:host
@@ -577,9 +577,9 @@ public class User {
 }
 ```
 
-#### 创建数据访问对象
+#### 创建继承于mongorepository的数据访问对象
 
-创建UserRepository继承于MongoRepository，当然你也可以使用JpaRepository或MongoRepository，这些接口扩展mongodb的CRUD操作的通用接口，此外还公开了底层持久化技术的功能，供我们扩展。
+创建UserRepository继承于MongoRepository，当然你也可以使用JpaRepository或MongoRepository，这些接口扩展了mongodb的CRUD操作的通用接口，此外还公开了底层持久化技术的功能，供我们扩展。
 
 例如以下```findById```，MongoRepository提供的接口为Long类型，显然我这里使用mongodb自动生成的ObjectId，自然是不行了，因此扩展了该方法。
 
