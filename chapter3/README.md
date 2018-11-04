@@ -4,17 +4,17 @@
 
 ## 快速导航
 
-* [引入AOP依赖](/chapter2/README.md#引入aop依赖)
-* [AOP常用注解解析](/chapter2/README.md#aop注解)
-* [实现日志分割功能](/chapter2/README.md#实现日志分割功能)
-    * [```@Pointcut``` 添加切入点](/chapter2/README.md#添加切入点)
-    * [```@Before``` 前置通知](/chapter2/README.md#前置通知)
-    * [```@After``` 后置通知](/chapter2/README.md#后置通知)
-    * [```@Around``` 环绕通知](/chapter2/README.md#环绕通知)
-    * [```@AfterReturning``` 返回后通知](/chapter2/README.md#返回后通知)
-    * [```@AfterReturning``` 异常通知](/chapter2/README.md#异常通知)
-* [一段段伪代码读懂执行顺序](/chapter2/README.md#一段段伪代码读懂执行顺序)
-* [对正常、异常两种情况分别进行测试](/chapter2/README.md测试正常异常两种情况)
+* [引入AOP依赖](/chapter3/README.md#引入aop依赖)
+* [AOP常用注解解析](/chapter3/README.md#aop注解)
+* [实现日志分割功能](/chapter3/README.md#实现日志分割功能)
+    * [```@Pointcut``` 添加切入点](/chapter3/README.md#添加切入点)
+    * [```@Before``` 前置通知](/chapter3/README.md#前置通知)
+    * [```@After``` 后置通知](/chapter3/README.md#后置通知)
+    * [```@Around``` 环绕通知](/chapter3/README.md#环绕通知)
+    * [```@AfterReturning``` 返回后通知](/chapter3/README.md#返回后通知)
+    * [```@AfterReturning``` 异常通知](/chapter3/README.md#异常通知)
+* [一段段伪代码读懂执行顺序](/chapter3/README.md#一段段伪代码读懂执行顺序)
+* [对正常、异常两种情况分别进行测试](/chapter3/README.md测试正常异常两种情况)
 
 ## 编程范式主要以下几大类
 
@@ -25,7 +25,7 @@
 
 ## 引入aop依赖
 
-以下示例是基于[Spring Boot实战系列(2)数据存储之Jpa操作MySQL /chapter2/chapter2-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-1)可在Github获取源码
+以下示例是基于[Spring Boot实战系列(2)数据存储之Jpa操作MySQL /chapter2/chapter2-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter2/chapter2-1)可在Github获取源码
 
 项目根目录 ```pom.xml``` 添加依赖 ```spring-boot-starter-aop```
 
@@ -43,10 +43,10 @@
 * ```Advice```: 通知的几种类型
     * ```@Before```: 前置通知，在某切入点```@Pointcut```之前的通知
     * ```@After```: 后置通知，在某切入点```@Pointcut```之后的通知无论成功或者异常。
-    * ```@AfterReturning```: 返回后通知，方法执行return之后，可以对返回的数据做加工处理。
+    * ```@AfterReturning```: 返回后通知，方法执行return之后，可以对返回的数据做加工处理。
     * ```@Around```: 环绕通知，在方法的调用前、后执行。
     * ```@AfterThrowing```: 抛出异常通知，程序出错跑出异常会执行该通知方法。
-* ```@Pointcut```: 切入点，从哪里开始。例如从某个包开始或者某个包下的某个类等。
+* ```@Pointcut```: 切入点，从哪里开始。例如从某个包开始或者某个包下的某个类等。
 
 ## 实现日志分割功能
 
@@ -241,3 +241,5 @@ try {
 ![](./img/aop20181104002.png)
 
 通过以上两种情况测试可以看到环绕通知在正常、异常两种情况都可以执行到。
+
+[Github查看本文完整示例 chapter3-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter3/chapter3-1)
