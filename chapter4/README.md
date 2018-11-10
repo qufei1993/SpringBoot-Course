@@ -7,7 +7,7 @@
 * [统一返回数据结构](/chapter4/README.md#统一返回数据结构)
     * `[统一返回数据结构]` 定义接口返回数据结构
     * `[统一返回数据结构]` 数据接口字段模型定义
-    * `[统一返回数据结构]` 封装接口返回方法（成功失败）
+    * `[统一返回数据结构]` 封装接口返回方法（成功、失败）
 * [统一异常处理](/chapter4/README.md#统一异常处理)
     * `[统一异常处理]` 状态消息枚举
     * `[统一异常处理]` 自定义异常类
@@ -176,7 +176,7 @@ public class UserException extends RuntimeException {
 * ```@ControllerAdvice```，spring3.2新增加，用于定义 ````@ExceptionHandler````, ```@InitBinder```, 和 ```@ModelAttribute```方法，并应用到所有的```@RequestMapping```方法。
 * ```@ExceptionHandler```，拦截异常，方法里的value是指需要拦截的异常类型，通过该注解可实现自定义异常处理。
 
-* ###### ```注意：``` 之前讲过AOP面向编程，注解```@AfterThrowing```会捕捉到项目中的错误信息，如果使用了此注解，它捕获到错误信息之后，会直接返回，是不会触发```@ControllerAdvice```注解的。
+* ###### ```注意：``` 之前讲过AOP面向切面编程，注解```@AfterThrowing```会捕捉到项目中的错误信息，如果使用了此注解，它捕获到错误信息之后，会直接返回，是不会触发```@ControllerAdvice```注解的。
 
 ```java
 package com.angelo.handle;
