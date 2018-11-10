@@ -12,7 +12,7 @@
     * [```@After``` 后置通知](/chapter3/README.md#后置通知)
     * [```@Around``` 环绕通知](/chapter3/README.md#环绕通知)
     * [```@AfterReturning``` 返回后通知](/chapter3/README.md#返回后通知)
-    * [```@AfterReturning``` 异常通知](/chapter3/README.md#异常通知)
+    * [```@AfterThrowing``` 异常通知](/chapter3/README.md#异常通知)
 * [一段段伪代码读懂执行顺序](/chapter3/README.md#一段段伪代码读懂执行顺序)
 * [对正常、异常两种情况分别进行测试](/chapter3/README.md测试正常异常两种情况)
 
