@@ -16,7 +16,6 @@
     * `[测试]` 测试正常返回及空指针系统异常
     * `[测试]` 自定义异常测试
 
-
 本文示例基于[Spring Boot实战系列(3)AOP面向切面编程 /chapter3/chapter3-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter3/chapter3-1)可在Github获取源码
 
 ## 统一返回数据结构
@@ -175,7 +174,7 @@ public class UserException extends RuntimeException {
 关于```@ControllerAdvice```更多内容可参考官方文档```https://docs.spring.io/spring-framework/docs/5.0.0.M1/javadoc-api/org/springframework/web/bind/annotation/ControllerAdvice.html```
 
 * ```@ControllerAdvice```，spring3.2新增加，用于定义 ````@ExceptionHandler````, ```@InitBinder```, 和 ```@ModelAttribute```方法，并应用到所有的```@RequestMapping```方法。
-* ```@ExceptionHandler```，拦截异常，方法里的value是指需要拦截的异常类型，通过该注解可实现自定义异常处理。
+* ```@ExceptionHandler```，拦截异常，方法里的value是指需要拦截的异常类型，通过该注解可实现自定义异常处理。
 
 * ###### ```注意：``` 之前讲过AOP面向编程，注解```@AfterThrowing```会捕捉到项目中的错误信息，如果使用了此注解，它捕获到错误信息之后，会直接返回，是不会触发```@ControllerAdvice```注解的。
 
@@ -235,8 +234,8 @@ public Result<User> userList(@PathVariable("exception") Boolean exception) {
     return MessageUtil.success(userRepository.findAll());
 }
 ```
-
-* 返回成功
+
+* 返回成功
 
 ![](./img/exception20181110001.png)
 
