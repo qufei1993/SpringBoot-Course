@@ -70,4 +70,12 @@
     * `[测试]` 测试正常返回及空指针系统异常
     * `[测试]` 自定义异常测试
 
+## 快速导航
+
+* [添加Maven依赖](/chapter5/README.md#添加maven依赖)
+* [借助IntelliJ IDEA编辑器快速创建测试类](/chapter5/README.md#创建测试类)
+* [Service单元测试](/chapter5/README.md#service单元测试)
+* [Controller单元测试](/chapter5/README.md#controller单元测试)
+* [问题汇总](/chapter5/README.md#问题汇总)
+    
 #### 未完待续，持续更新中。。。
