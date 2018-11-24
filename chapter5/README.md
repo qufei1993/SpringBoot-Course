@@ -1,6 +1,6 @@
 # 单元测试
 
-> 本篇主要介绍了Spring Boot中创建单元测试，分别介绍了Service层单元测试、Controller层基于MockMvc的单元测试。
+> 本篇主要介绍了Spring Boot中创建单元测试，分别讲解了Service层单元测试、Controller层基于MockMvc的单元测试。
 
 ## 快速导航
 
@@ -52,8 +52,9 @@ public class UserServiceTest {
 创建``` service/UserServiceTest.java ``` 类，在类名上加上以下两个注解，就可以让一个普通类变成一个单元测试类。
 
 1. ```@RunWith(SpringRunner.class)```：```@RunWith```是一个运行器，```SpringRunner.class```表示使用```Spring Test```进行单元测试，其中```SpringRunner```继承类```SpringJUnit4ClassRunner```。
-2. ```@@SpringBootTest```：将启动整个Spring Boot工程
+2. ```@SpringBootTest```：将启动整个Spring Boot工程
 
+``` service/UserServiceTest.java ```
 ```java
 package com.angelo.service;
 
@@ -94,7 +95,7 @@ public class UserServiceTest {
 
 ## controller单元测试
 
-以上是针对业务层测试，如果想进行接口API测试怎么办呢，难道，开发完成每次调用postman一个个测吗？答案当然是```no```，不过，你也可以选择一个个测试没什么问题，如果你想通过代码实现模拟http请求就要用到我们的```@AutoConfigureMockMvc```注解，使用了MockMvc无需启动项目，就可实现接口测试。
+以上是针对业务层测试，如果想进行接口API测试怎么办呢，难道，开发完成每次调用postman一个个测吗？答案当然是```no```，不过，你也可以选择一个个测试没什么问题，如果你想通过代码实现模拟http请求就要用到我们的```@AutoConfigureMockMvc```注解，使用了MockMvc无需启动项目，就可实现接口测试。
 
 以下用到的MockMvc方法介绍
 
@@ -103,9 +104,9 @@ public class UserServiceTest {
 * ```contentType(MediaType.APPLICATION_JSON_UTF8)```：表示请求传输的```Conent-Type=application/json;charset=utf-8```
 * accept(MediaType.APPLICATION_JSON))：客户端希望接收的```Conent-Type=application/json;```
 * ```andExpect(MockMvcResultMatchers.status().isOk())```：返回响应状态是否为期望的200，如果不是则抛出异常
-* ```andReturn()```：返回结果
+* ```andReturn()```：返回结果
 
-```service/UserControllerTest.java```
+```controller/UserControllerTest.java```
 
 ```java
 package com.angelo.controller;
