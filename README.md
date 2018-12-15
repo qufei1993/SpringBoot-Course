@@ -90,7 +90,7 @@
     * [html邮件](/chapter6/README.md#html邮件)
     * [附件邮件](/chapter6/README.md#附件邮件)
     * [html内嵌图片邮件](/chapter6/README.md#html内嵌图片邮件)
-    * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
+    * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
 * [问题汇总](/chapter6/README.md#问题汇总)
 
 #### 未完待续，持续更新中。。。

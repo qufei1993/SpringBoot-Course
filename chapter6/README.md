@@ -12,7 +12,7 @@
     * [html邮件](/chapter6/README.md#html邮件)
     * [附件邮件](/chapter6/README.md#附件邮件)
     * [html内嵌图片邮件](/chapter6/README.md#html内嵌图片邮件)
-    * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
+    * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
 * [问题汇总](/chapter6/README.md#问题汇总)
     
 
@@ -66,9 +66,9 @@ spring:
 基于上节单元测试[chapter5-1](https://github.com/Q-Angelo/SpringBoot-Course/tree/master/chapter5/chapter5-1)代码示例基础之上编写
 #### 业务层代码
 
-service目录下创建MailService.java文件，负责业务层邮件发送功能编写
+service目录下创建MailService.java文件，负责业务层邮件发送功能编写
 
-让我们利用Spring提供的```JavaMailSender```接口实现邮件发送，在项目中使用到地方用```@Autowired```注入邮件发送对象
+让我们利用Spring提供的```JavaMailSender```接口实现邮件发送，在项目中使用到地方用```@Autowired```注入邮件发送对象
 
 ```MailService.java```
 ```java
@@ -173,13 +173,13 @@ public void sendTextEmailTest() {
 }
 ```
 
-* 测试结果
+* 测试结果
 
 ![](./img/20181209_text_email.png)
 
 #### html邮件
 
-基于```MimeMessageHelper```创建```helper```对象，设置setText第二个参数为true，将会使用html格式打印邮件。
+基于```MimeMessageHelper```创建```helper```对象，设置setText第二个参数为true，将会使用html格式打印邮件。
 
 * 业务层```MailService.java```
 ```java
@@ -272,7 +272,7 @@ public void sendHtmlEmailTest() throws MessagingException {
 
 ![](./img/20181209_attachment_email.png)
 
-#### html内嵌图片邮件
+#### html内嵌图片邮件
 
 也是基于html邮件发送，通过内嵌图片等静态资源，可以直接看到图片。
 
@@ -325,13 +325,13 @@ public void sendHtmlEmailTest() throws MessagingException {
 
 ![](./img/20181209_photo_email.png)
 
-#### 模板邮件
+#### 模板邮件
 
 > 邮件内容相对简单的情况下，我们可以选择使用以上几种简单邮件发送方法，在复杂业务中需要用到html结构，且html里的数据还需要动态修改，还是选择模版邮件，可以使用```Freemarker```、```thymeleaf```等模板引擎，这里主要介绍使用```thymeleaf```。
 
 * 邮件模板编写
 
-```resources/templates```目录下新建```emailTemplate.html```文件
+```resources/templates```目录下新建```emailTemplate.html```文件
 
 ```html
 <!DOCTYPE html>
@@ -348,7 +348,7 @@ public void sendHtmlEmailTest() throws MessagingException {
 </html>
 ```
 
-利用上面介绍的发送html邮件即可，在单元测试文件中增加一个方法进行测试。
+利用上面介绍的发送html邮件即可，在单元测试文件中增加一个方法进行测试。
 
 * 单元测试层```MailServiceTest.java```
 ```java
@@ -370,7 +370,7 @@ public void testTemplateEmailTest() throws MessagingException {
 
 ## 常见问题
 
-出现这个错误的原因是网易将我发送的邮件当成了垃圾邮件，<<发送163文本邮件>>这是我填写的邮件标题，后来发现网易是对标题里面含了```163```导致的，大家遇到类似问题多检查下。
+出现这个错误的原因是网易将我发送的邮件当成了垃圾邮件，<<发送163文本邮件>>这是我填写的邮件标题，后来发现网易是对标题里面含了```163```导致的，大家遇到类似问题多检查下。
 
 ```
 com.sun.mail.smtp.SMTPSendFailedException: 554 DT:SPM 163 smtp10,DsCowADH1MxWegtcyxFjDw--.48939S2 1544256086
