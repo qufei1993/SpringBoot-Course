@@ -77,5 +77,20 @@
 * [Service单元测试](/chapter5/README.md#service单元测试)
 * [Controller单元测试](/chapter5/README.md#controller单元测试)
 * [问题汇总](/chapter5/README.md#问题汇总)
-    
+
+# 邮件发送
+
+> 本篇主要介绍了Spring Boot中邮件发送，分别讲解了简单的文本邮件、HTML邮件、附件邮件、图片邮件、模板邮件。
+
+* [添加Maven依赖](/chapter6/README.md#添加maven依赖)
+* [配置文件增加邮箱相关配置](/chapter6/README.md#配置文件增加邮箱相关配置)
+* [Service、Test项目代码构建](/chapter6/README.md#项目构建)
+* [五种邮件发送类型讲解](/chapter6/README.md#五种邮件发送类型讲解)
+    * [文本邮件](/chapter6/README.md#文本邮件)
+    * [html邮件](/chapter6/README.md#html邮件)
+    * [附件邮件](/chapter6/README.md#附件邮件)
+    * [html内嵌图片邮件](/chapter6/README.md#html内嵌图片邮件)
+    * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
+* [问题汇总](/chapter6/README.md#问题汇总)
+
 #### 未完待续，持续更新中。。。
