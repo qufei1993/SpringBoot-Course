@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    consul:
+      host: 192.168.6.128
+      port: 8500
+      config:
+        prefix: config
+        enabled: true
+        format: YAML
+        data-key: user

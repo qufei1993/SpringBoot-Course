@@ -78,7 +78,7 @@
 * [Controller单元测试](/chapter5/README.md#controller单元测试)
 * [问题汇总](/chapter5/README.md#问题汇总)
 
-# 邮件发送
+## 邮件发送
 
 > 本篇主要介绍了Spring Boot中邮件发送，分别讲解了简单的文本邮件、HTML邮件、附件邮件、图片邮件、模板邮件。
 
@@ -92,5 +92,16 @@
     * [html内嵌图片邮件](/chapter6/README.md#html内嵌图片邮件)
     * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
 * [问题汇总](/chapter6/README.md#问题汇总)
+
+## SpringBoot集成服务注册发现Consul
+
+* [添加 Consul Maven依赖](/chapter7/README.md#添加maven依赖)
+* [系统级配置文件&应用级配置文件](/chapter7/README.md#配置文件)
+* [配置Consul管理控制台](/chapter7/README.md#配置Consul管理控制台)
+* [项目构建](/chapter7/README.md#项目构建)
+    * [建立Config获取Consul配置数据](/chapter7/README.md#建立Config获取Consul配置数据)
+    * [编写启动类调用配置](/chapter7/README.md#编写启动类调用配置)
+* [接口测试](/chapter7/README.md#接口测试)
+* [总结](/chapter7/README.md#总结)
 
 #### 未完待续，持续更新中。。。

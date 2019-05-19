@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: consul-service
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: 192.168.6.128
+      port: 8500
+      discovery: # 服务发现配置
+        enabled: true
+        register: true
+        deregister: true
+        prefer-ip-address: true
+        health-check-interval: 10s
+        health-check-critical-timeout: 30s
+        health-check-path: /health
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port} # 应用名称+服务器IP+端口
