@@ -1,4 +1,4 @@
-# Spring Boot 集成服务注册发现Consul配置中心
+# Spring Boot 集成服务注册发现之Consul配置中心
 
 > 本篇主要介绍了 `Spring Boot` 如何与 `Consul` 进行集成，Consul 只是服务注册的一种实现，还有其它的例如 Zookeeper、Etcd 等，服务注册发现在微服务架构中扮演这一个重要的角色，伴随着服务的大量出现，服务与服务之间的配置管理、运维管理也变的难以维护，通过 Consul 可以解决这些问题，实现服务治理、服务监控。
 

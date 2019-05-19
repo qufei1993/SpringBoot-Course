@@ -93,7 +93,7 @@
     * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
 * [问题汇总](/chapter6/README.md#问题汇总)
 
-## SpringBoot集成服务注册发现Consul
+## SpringBoot集成服务注册发现之Consul配置中心
 
 * [添加 Consul Maven依赖](/chapter7/README.md#添加maven依赖)
 * [系统级配置文件&应用级配置文件](/chapter7/README.md#配置文件)
@@ -103,5 +103,33 @@
     * [编写启动类调用配置](/chapter7/README.md#编写启动类调用配置)
 * [接口测试](/chapter7/README.md#接口测试)
 * [总结](/chapter7/README.md#总结)
+
+## 转载分享
+
+建立本开源项目的初衷是基于个人学习与工作中对 Spring Boot 的总结记录，在这里也希望能帮助一些在学习 Spring Boot 过程中遇到问题的小伙伴，如果您需要转载本仓库的一些文章到自己的博客，请按照以下格式注明出处，谢谢合作。
+
+```
+作者：五月君
+链接：https://github.com/Q-Angelo/SpringBoot-Course
+来源：Github SpringBoot实战系列
+```
+
+## 参与贡献
+
+1. 如果您对本项目有任何建议或发现文中内容有误的，欢迎提交 issues 进行指正。
+2. 对于文中我没有涉及到知识点，欢迎提交 PR。
+3. 如果您有文章推荐请以 markdown 格式到邮箱 `qzfweb@gmail.com`，[中文技术文档的写作规范指南](https://github.com/ruanyf/document-style-guide)。
+
+## 联系我
+
+- **微信**
+添加我的微信备注“`Spring Boot`”
+<img src="./img/wx.jpeg" width="180" height="180"/>
+
+- **公众号**
+专注于Node.js相关技术栈的研究分享，包括基础知识、Nodejs、Consul、Redis、微服务、消息中间件等，如果大家感兴趣可以给予关注支持！
+<img src="./img/node_roadmap_wx.jpg" width="180" height="180"/>
+
+<hr/>
 
 #### 未完待续，持续更新中。。。
