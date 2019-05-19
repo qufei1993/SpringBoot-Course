@@ -93,16 +93,24 @@
     * [模板邮件](/chapter6/README.md#html内嵌图片邮件)
 * [问题汇总](/chapter6/README.md#问题汇总)
 
-## SpringBoot集成服务注册发现之Consul配置中心
+## SpringBoot集成Consul
 
-* [添加 Consul Maven依赖](/chapter7/README.md#添加maven依赖)
-* [系统级配置文件&应用级配置文件](/chapter7/README.md#配置文件)
-* [配置Consul管理控制台](/chapter7/README.md#配置Consul管理控制台)
-* [项目构建](/chapter7/README.md#项目构建)
-    * [建立Config获取Consul配置数据](/chapter7/README.md#建立Config获取Consul配置数据)
-    * [编写启动类调用配置](/chapter7/README.md#编写启动类调用配置)
-* [接口测试](/chapter7/README.md#接口测试)
-* [总结](/chapter7/README.md#总结)
+- ### 微服务服务注册发现之 Consul 系列 [[more]](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/consul.md)
+    - ```[Consul]``` [使用Consul解决了哪些问题](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/consul.md#使用consul解决了哪些问题)
+    - ```[Consul]``` [微服务Consul系列之服务部署、搭建、使用](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/consul.md#consul架构)
+    - ```[Consul]``` [微服务Consul系列之集群搭建](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/consul.md#集群搭建)
+    - ```[Consul]``` [微服务Consul系列之服务注册与服务发现](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/consul.md#服务注册与发现)
+    - ```[Question]``` [微服务Consul系列之问题汇总篇](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/consul.md#问题总结)
+
+- ### SpringBoot集成Consul配置中心
+    * [添加 Consul Maven依赖](/chapter7/README.md#添加maven依赖)
+    * [系统级配置文件&应用级配置文件](/chapter7/README.md#配置文件)
+    * [配置Consul管理控制台](/chapter7/README.md#配置Consul管理控制台)
+    * [项目构建](/chapter7/README.md#项目构建)
+        * [建立Config获取Consul配置数据](/chapter7/README.md#建立Config获取Consul配置数据)
+        * [编写启动类调用配置](/chapter7/README.md#编写启动类调用配置)
+    * [接口测试](/chapter7/README.md#接口测试)
+    * [总结](/chapter7/README.md#总结)
 
 ## 转载分享
 
