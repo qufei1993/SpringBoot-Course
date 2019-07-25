@@ -179,7 +179,7 @@ user:
     info: 我今年${user.age}。
 ```
 
-```/src/main/resources```目录下新建```UserProperties.java```文件
+```/src/main/java/com/angelo```目录下新建```UserProperties.java```文件
 
 UserProperties.java
 ```java
