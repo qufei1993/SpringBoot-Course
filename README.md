@@ -112,6 +112,11 @@
     * [接口测试](/chapter7/README.md#接口测试)
     * [总结](/chapter7/README.md#总结)
 
+## 消息中间件 RabbitMQ
+
+- [RabbitMQ 入门篇](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-base.md)
+- [RabbitMQ 交换机消息投递机制](chapter8/chapter8-1/README.md)
+
 ## 转载分享
 
 建立本开源项目的初衷是基于个人学习与工作中对 Spring Boot 的总结记录，在这里也希望能帮助一些在学习 Spring Boot 过程中遇到问题的小伙伴，如果您需要转载本仓库的一些文章到自己的博客，请按照以下格式注明出处，谢谢合作。
