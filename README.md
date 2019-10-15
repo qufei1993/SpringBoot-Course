@@ -114,8 +114,11 @@
 
 ## 消息中间件 RabbitMQ
 
-- [RabbitMQ 入门篇](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-base.md)
-- [RabbitMQ 交换机消息投递机制](chapter8/chapter8-1/README.md)
+- [RabbitMQ 系列之：入门篇](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-base.md)
+- [RabbitMQ 系列之：消息确认机制（Confirm）](chapter8/chapter8-1/README.md)
+- [RabbitMQ 系列之：不同类型的交换机消息投递机制](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-exchange.md)
+- [RabbitMQ 系列之：限流实现](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-prefetch.md)
+- [RabbitMQ 系列之：延迟队列实现定时任务](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-schedule.md)
 
 ## 转载分享
 
