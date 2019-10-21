@@ -1,0 +1,21 @@
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 10
+
+order:
+  directExchangeName: order_direct_exchange
+  directQueueName: order_direct_queue
+  routingKey: order_routingKey

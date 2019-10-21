@@ -114,11 +114,13 @@
 
 ## 消息中间件 RabbitMQ
 
-- [RabbitMQ 系列之：入门篇](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-base.md)
-- [RabbitMQ 系列之：消息确认机制（Confirm）](chapter8/chapter8-1/README.md)
-- [RabbitMQ 系列之：不同类型的交换机消息投递机制](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-exchange.md)
-- [RabbitMQ 系列之：限流实现](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-prefetch.md)
-- [RabbitMQ 系列之：延迟队列实现定时任务](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-schedule.md)
+- ### 消息中间件 RabbitMQ 基础篇
+    - [RabbitMQ：入门篇](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-base.md)
+    - [RabbitMQ：交换机消息投递机制](chapter8/chapter8-1/README.md)
+    - [RabbitMQ：死信队列+TTL 实现定时任务](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-schedule.md)
+    - [RabbitMQ：高并发下消费端限流实践](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-prefetch.md)
+    - [RabbitMQ：服务异常重连](https://github.com/Q-Angelo/Nodejs-Roadmap/blob/master/docs/microservice/rabbitmq-reconnecting.md)
+- ### 消息中间件 RabbitMQ 框架整合
 
 ## 转载分享
 
